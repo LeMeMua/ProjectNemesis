@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bxjikfjviel2b"]
+
+[ext_resource type="Script" uid="uid://bqhy8oc1dj30k" path="res://Players/player.gd" id="1_w22c2"]
+[ext_resource type="Script" uid="uid://p5qupulkhsjf" path="res://HSFM/State_Machine.gd" id="2_fq5u1"]
+[ext_resource type="Script" uid="uid://bjec1jm1wgeir" path="res://HSFM/States/StateBasePlayer.gd" id="3_ey0s5"]
+[ext_resource type="Script" uid="uid://bx3yvn0mew4s2" path="res://HSFM/States/Playing/Playing.gd" id="4_5k41c"]
+[ext_resource type="Script" uid="uid://dda2qoebs2i4b" path="res://HSFM/States/Playing/Ver Espejo/Playing_VerEspejo.gd" id="5_bnt45"]
+[ext_resource type="Script" uid="uid://bbmu6nujy4yj2" path="res://HSFM/States/Playing/Ver Espejo/Tamaños/Play_Espejo_Normal.gd" id="6_x03v5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qe1pe"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w22c2"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1593191334]
+script = ExtResource("1_w22c2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=539931313]
+shape = SubResource("CapsuleShape3D_qe1pe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=182039732]
+mesh = SubResource("CapsuleMesh_w22c2")
+
+[node name="Head" type="Node3D" parent="." unique_id=1090278239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67757857, -0.31901067)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=2052715959]
+
+[node name="StateMachine" type="Node" parent="." unique_id=792951356 node_paths=PackedStringArray("default_state")]
+script = ExtResource("2_fq5u1")
+default_state = NodePath("BasePlayer/Playing/VerEspejo/Normal")
+
+[node name="BasePlayer" type="Node" parent="StateMachine" unique_id=1116096301]
+script = ExtResource("3_ey0s5")
+
+[node name="Playing" type="Node" parent="StateMachine/BasePlayer" unique_id=202459609]
+script = ExtResource("4_5k41c")
+
+[node name="VerEspejo" type="Node" parent="StateMachine/BasePlayer/Playing" unique_id=927562851]
+script = ExtResource("5_bnt45")
+
+[node name="Normal" type="Node" parent="StateMachine/BasePlayer/Playing/VerEspejo" unique_id=1081993308]
+script = ExtResource("6_x03v5")
+
+[node name="NotPlaying" type="Node" parent="StateMachine/BasePlayer" unique_id=237126555]

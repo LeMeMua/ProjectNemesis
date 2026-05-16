@@ -1,0 +1,2 @@
+extends StatePlayerPlaying
+class_name StatePlayerPlayingVerEspejos
