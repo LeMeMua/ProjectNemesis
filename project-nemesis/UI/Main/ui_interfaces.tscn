@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bdew54agnyhxv"]
 
 [ext_resource type="Texture2D" uid="uid://bsx6xlikgj11s" path="res://Assets/UI/pngwing.com(1).png" id="1_x2xry"]
+[ext_resource type="PackedScene" uid="uid://cxktbw2d4423x" path="res://UI/HUD/hud.tscn" id="2_pu533"]
+[ext_resource type="PackedScene" uid="uid://rau0gk0u4exj" path="res://Shader/mask.tscn" id="3_0r8cq"]
 
 [node name="UI_Interfaces" type="Control" unique_id=1247964423]
 layout_mode = 3
@@ -27,3 +29,9 @@ grow_vertical = 2
 pivot_offset = Vector2(5, 5)
 texture = ExtResource("1_x2xry")
 expand_mode = 1
+
+[node name="HUD" parent="." unique_id=1246105262 instance=ExtResource("2_pu533")]
+layer = 10
+
+[node name="Mask" parent="." unique_id=355107799 instance=ExtResource("3_0r8cq")]
+layer = 2
