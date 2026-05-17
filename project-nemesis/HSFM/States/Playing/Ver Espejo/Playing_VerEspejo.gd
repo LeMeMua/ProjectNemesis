@@ -9,6 +9,9 @@ var view_animation: float = 3.0
 var elapsed: float
 var timer: SceneTreeTimer
 var tween: Tween
+var last_hit: Object
+var grabbing: bool = false
+var grabbed_object: RigidBody3D = null
 
 func _ready() -> void:
 	tween = create_tween()
@@ -25,6 +28,9 @@ func on_physics_process(_delta: float) -> void:
 		toggle_flashlight()
 	if Input.is_action_just_pressed("Interact"):
 		interact()
+	if !grabbing:
+		check_billboard()
+		
 
 func anim_viewport() -> void:
 	#print("anim_viewport en: ", name, " viewing_mirror es: ", viewing_mirror)
@@ -33,6 +39,7 @@ func anim_viewport() -> void:
 		if viewing_mirror:
 			kill_tween()
 			player.rotation_espejo.visible = true
+			player.player_mirror.light.visible = true
 			tween.tween_property(player.rotation_espejo, "rotation:x", deg_to_rad(0), 0.5)
 			
 			"""timer = get_tree().create_timer(view_animation)
@@ -61,11 +68,21 @@ func toggle_flashlight() ->void:
 	elif !flashlight_power:
 		player.linterna.visible = false
 
-func interact()-> void:
+func interact() -> void:
+	if grabbing:
+		grabbing = false
+		if grabbed_object:
+			grabbed_object.collision.disabled = false
+			grabbed_object = null
+			return
 	if player.ray_cast_3d.is_colliding():
-		var hit= player.ray_cast_3d.get_collider()
+		var hit = player.ray_cast_3d.get_collider()
 		if hit.is_in_group("light"):
 			hit.toggle_switch()
+		if hit.is_in_group("billboard"):
+			grabbing = true
+			hit.collision.disabled = true
+			grabbed_object = hit
 
 func kill_tween()->void:
 	if tween:
@@ -75,3 +92,16 @@ func kill_tween()->void:
 func make_invisible()->void:
 	if hiding:
 		player.rotation_espejo.visible=false
+		player.player_mirror.light.visible = false
+
+func check_billboard()-> void:
+	if player.ray_cast_3d.is_colliding():
+		var hit = player.ray_cast_3d.get_collider()
+		if hit.is_in_group("billboard"):
+			hit.sprite_3d.visible = true
+			hit.subview.set_visibility(true)
+			last_hit = hit
+	else:
+		if last_hit:
+			last_hit.subview.set_visibility(false)
+			last_hit.sprite_3d.visible = false

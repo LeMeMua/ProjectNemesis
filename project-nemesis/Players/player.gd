@@ -11,3 +11,4 @@ var state_names : StatesNames
 @onready var rotation_espejo: Node3D = $Head/RotationEspejo
 @onready var linterna: Node3D = $Head/Linterna
 @onready var ray_cast_3d: RayCast3D = $Head/Camera3D/RayCast3D
+@onready var hand: Node3D = $Head/Hand

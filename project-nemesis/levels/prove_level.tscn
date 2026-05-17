@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://pc71d3spfvon" path="res://Players/player_mirror.tscn" id="2_a3gwf"]
 [ext_resource type="PackedScene" uid="uid://cvcsgbkhdj8fu" path="res://Objects/Interactuables/Light_switch/light_switch.tscn" id="4_l05c0"]
 [ext_resource type="PackedScene" uid="uid://bdew54agnyhxv" path="res://UI/Main/ui_interfaces.tscn" id="5_x7skl"]
+[ext_resource type="PackedScene" uid="uid://tgmg2d827r3v" path="res://Assets/Items_Info/item.tscn" id="6_w65pd"]
+[ext_resource type="Resource" uid="uid://ce8jj0f3xsrxl" path="res://Assets/Resources/Items/PruebaBox.tres" id="7_2euml"]
 
 [sub_resource type="Sky" id="Sky_l05c0"]
 sky_material = ExtResource("1_pd5a2")
@@ -47,7 +49,7 @@ visible = false
 shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1116037084]
-collision_mask = 3
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=341041927]
 shape = SubResource("BoxShape3D_lwwqi")
@@ -57,7 +59,7 @@ mesh = SubResource("BoxMesh_v7pb3")
 
 [node name="Pared" type="StaticBody3D" parent="." unique_id=1421614233]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4.5232544, -16.006165)
-collision_mask = 3
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pared" unique_id=2099391371]
 shape = SubResource("BoxShape3D_lwwqi")
@@ -67,7 +69,7 @@ mesh = SubResource("BoxMesh_v7pb3")
 
 [node name="Pared2" type="StaticBody3D" parent="." unique_id=1517713563]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -16.001335, 4.5232544, -1.035059)
-collision_mask = 3
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pared2" unique_id=108657978]
 shape = SubResource("BoxShape3D_lwwqi")
@@ -99,3 +101,13 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.
 light = NodePath("../Lights")
 
 [node name="UI_Interfaces" parent="." unique_id=1247964423 instance=ExtResource("5_x7skl")]
+
+[node name="Interactuables" type="Node3D" parent="." unique_id=1730777603]
+
+[node name="Item" parent="Interactuables" unique_id=443501509 groups=["billboard"] instance=ExtResource("6_w65pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8129373, 0)
+item_info = ExtResource("7_2euml")
+
+[node name="Item2" parent="Interactuables" unique_id=2050088648 groups=["billboard"] instance=ExtResource("6_w65pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8619666, 3.8129373, -9.054679)
+item_info = ExtResource("7_2euml")

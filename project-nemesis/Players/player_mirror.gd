@@ -7,6 +7,7 @@ class_name PlayerMirror
 @onready var camera: Camera3D = $SubViewport/Referencia/Camera3D
 @onready var referencia: Node3D = $SubViewport/Referencia
 @onready var notifier: VisibleOnScreenNotifier3D = $MeshInstance3D/VisibleOnScreenNotifier3D
+@onready var light: OmniLight3D = $OmniLight3D
 
 func _ready() -> void:
 	notifier.screen_entered.connect(GameManager.emit_notifier_screen)

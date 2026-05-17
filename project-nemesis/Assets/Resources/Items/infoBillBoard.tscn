@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://qubqdm60myoh"]
 
+[ext_resource type="Script" uid="uid://dofxhow1ymrx5" path="res://Assets/Resources/Items/info_bill_board.gd" id="1_451su"]
 [ext_resource type="FontFile" uid="uid://cdfljc714sss0" path="res://Assets/UI/Font/IndieFlower-Regular.ttf" id="1_bic4t"]
 [ext_resource type="Texture2D" uid="uid://cndh3t512sl1p" path="res://icon.svg" id="2_wfgml"]
 
@@ -13,8 +14,10 @@ font_size = 30
 
 [node name="SubViewport" type="SubViewport" unique_id=1940571167]
 size = Vector2i(853, 480)
+script = ExtResource("1_451su")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1584660377]
+visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=693060173]
 anchors_preset = 15
