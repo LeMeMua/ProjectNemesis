@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://52yy2doq038x"]
+
+[ext_resource type="AudioStream" uid="uid://rpnemo53ymgo" path="res://yaisume/Musica/SONRISA.ogg" id="1_o7tb4"]
+
+[node name="MusicaFondo" type="AudioStreamPlayer"]
+stream = ExtResource("1_o7tb4")
+autoplay = true

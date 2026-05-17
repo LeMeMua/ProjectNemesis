@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="ProjectNemesis"
 run/main_scene="uid://ds77ikq81ysf0"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=144
 config/icon="res://icon.svg"
 
@@ -25,6 +25,7 @@ config/icon="res://icon.svg"
 SignalManager="*uid://cp2ig1ah87geq"
 GameManager="*uid://ctmlb0o4kl70y"
 SceneManager="*uid://dtbkdkrmcfwx6"
+MusicaGlobal="*res://yaisume/Musica/Musica_Global.tscn"
 
 [display]
 
