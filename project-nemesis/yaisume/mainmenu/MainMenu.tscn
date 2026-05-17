@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://b7snc41s4inld" path="res://yaisume/VivenciasTheme.tres" id="1_5ckiy"]
 [ext_resource type="FontFile" uid="uid://bwgy6gy5561y6" path="res://yaisume/recursos/bloodcrow.ttf" id="1_i26rj"]
 [ext_resource type="Script" uid="uid://bw1l105jb8v6h" path="res://yaisume/mainmenu/main_menu.gd" id="2_kvdy3"]
+[ext_resource type="Texture2D" uid="uid://cw4l1nex5ajcv" path="res://Players/poster_acciones.png" id="4_qfoup"]
 
 [node name="Control" type="Control" unique_id=203863148]
 layout_mode = 3
@@ -60,6 +61,15 @@ text = "Configuracion"
 [node name="SalirButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=516449620]
 layout_mode = 2
 text = "Salir"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1420810206]
+layout_mode = 0
+offset_left = -920.0
+offset_top = -464.0
+offset_right = -270.0
+offset_bottom = 519.0
+texture = ExtResource("4_qfoup")
+expand_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/GridContainer/InicioButton" to="." method="_on_inicio_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/GridContainer/SalirButton" to="." method="_on_salir_button_pressed"]

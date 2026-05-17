@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://b7snc41s4inld"]
+[gd_resource type="Theme" format=3 uid="uid://b7snc41s4inld"]
 
 [ext_resource type="FontFile" uid="uid://bwgy6gy5561y6" path="res://yaisume/recursos/bloodcrow.ttf" id="2_oj3x5"]
 [ext_resource type="Texture2D" uid="uid://i5268uvai7k2" path="res://yaisume/recursos/manchanegra.png" id="2_v5kna"]

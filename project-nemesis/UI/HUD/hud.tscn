@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxktbw2d4423x"]
+[gd_scene format=3 uid="uid://cxktbw2d4423x"]
 
 [ext_resource type="Script" uid="uid://bp1funtrfcgvc" path="res://UI/HUD/hud.gd" id="1_te8l2"]
 [ext_resource type="Texture2D" uid="uid://dsijn3brxe0c8" path="res://UI/HUD/CORAZON.png" id="2_te8l2"]
@@ -8,10 +8,10 @@
 font = ExtResource("3_qdh7y")
 font_size = 32
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=638014142]
 script = ExtResource("1_te8l2")
 
-[node name="Fullsize" type="Control" parent="."]
+[node name="Fullsize" type="Control" parent="." unique_id=580042446]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="health" type="TextureRect" parent="Fullsize"]
+[node name="health" type="TextureRect" parent="Fullsize" unique_id=1686962176]
 modulate = Color(0.27450982, 0.27450982, 0.6313726, 1)
 layout_mode = 1
 anchors_preset = 2
@@ -33,7 +33,7 @@ grow_vertical = 0
 texture = ExtResource("2_te8l2")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=608217361]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -43,15 +43,15 @@ offset_right = -33.0
 offset_bottom = 200.0
 grow_horizontal = 0
 
-[node name="Objective" type="Label" parent="VBoxContainer"]
+[node name="Objective" type="Label" parent="VBoxContainer" unique_id=1335485247]
 custom_minimum_size = Vector2(250, 48)
 layout_mode = 2
 size_flags_vertical = 1
-text = "Sal del Pasillo"
+text = "Haz que tu             sombra salga     del cuarto"
 label_settings = SubResource("LabelSettings_te8l2")
 autowrap_mode = 1
 
-[node name="Tiempo" type="Label" parent="VBoxContainer"]
+[node name="Tiempo" type="Label" parent="VBoxContainer" unique_id=1274297950]
 layout_mode = 2
 size_flags_vertical = 1
 text = "40.0
@@ -59,7 +59,7 @@ text = "40.0
 label_settings = SubResource("LabelSettings_te8l2")
 horizontal_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=627049889]
 wait_time = 60.0
 one_shot = true
 autostart = true
