@@ -33,7 +33,7 @@ func anim_viewport() -> void:
 		if viewing_mirror:
 			kill_tween()
 			player.rotation_espejo.visible = true
-			tween.tween_property(player.rotation_espejo, "rotation:x", deg_to_rad(0), 2.0)
+			tween.tween_property(player.rotation_espejo, "rotation:x", deg_to_rad(0), 0.5)
 			
 			"""timer = get_tree().create_timer(view_animation)
 			var t = 1.0 - (timer.time_left / view_animation)
@@ -42,7 +42,7 @@ func anim_viewport() -> void:
 		elif !viewing_mirror:
 			kill_tween()
 			hiding = true
-			tween.tween_property(player.rotation_espejo, "rotation:x", deg_to_rad(-60), 2.0)
+			tween.tween_property(player.rotation_espejo, "rotation:x", deg_to_rad(-60), 0.5)
 			tween.finished.connect(make_invisible, CONNECT_ONE_SHOT)
 			"""timer = get_tree().create_timer(view_animation)
 			var t = 1.0 - (timer.time_left / view_animation)

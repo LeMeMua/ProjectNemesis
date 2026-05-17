@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://rau0gk0u4exj"]
+
+[ext_resource type="Shader" uid="uid://hltahywvj173" path="res://Shader/circle_mask.gdshader" id="1_14d4d"]
+[ext_resource type="Script" uid="uid://dn4duum8otppt" path="res://Shader/mask.gd" id="1_jol40"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5g6kp"]
+shader = ExtResource("1_14d4d")
+shader_parameter/time = 0.0
+shader_parameter/circleSize = 0.50000002375
+shader_parameter/fadeWidth = 0.40000001830148
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hudwu"]
+shader = ExtResource("1_14d4d")
+shader_parameter/time = 0.0
+shader_parameter/circleSize = 1.0000000475
+shader_parameter/fadeWidth = 0.40000001830148
+
+[node name="Mask" type="CanvasLayer" unique_id=355107799]
+script = ExtResource("1_jol40")
+material = SubResource("ShaderMaterial_5g6kp")
+
+[node name="ShaderCircle" type="ColorRect" parent="." unique_id=1404233274]
+material = SubResource("ShaderMaterial_hudwu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

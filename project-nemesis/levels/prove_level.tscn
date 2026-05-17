@@ -16,6 +16,7 @@ tonemap_mode = 3
 ssr_enabled = true
 ssr_max_steps = 256
 ssao_enabled = true
+ssil_enabled = true
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
 fog_enabled = true
@@ -76,11 +77,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15846252, -0.55939865)
 mesh = SubResource("BoxMesh_v7pb3")
 
 [node name="PlayerMirror" parent="." unique_id=654816598 node_paths=PackedStringArray("player") instance=ExtResource("2_a3gwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21488619, 2.2920408, -1.8148794)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.310718, 2.2920408, -10.5783615)
 player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=1593191334 node_paths=PackedStringArray("player_mirror") instance=ExtResource("1_v7pb3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.304421, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.304421, 9.277294)
 player_mirror = NodePath("../PlayerMirror")
 
 [node name="Lights" type="Node3D" parent="." unique_id=1341844896]

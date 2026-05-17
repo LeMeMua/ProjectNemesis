@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="item_data" format=3 uid="uid://ce8jj0f3xsrxl"]
+
+[ext_resource type="Texture2D" uid="uid://cndh3t512sl1p" path="res://icon.svg" id="1_4ta2i"]
+[ext_resource type="Script" uid="uid://bl1r427686ckc" path="res://Assets/Resources/item_data.gd" id="1_c3f07"]
+
+[resource]
+script = ExtResource("1_c3f07")
+item_name = "PruebaBox"
+description = "Esto es una PruebaBox"
+item_image = ExtResource("1_4ta2i")
+metadata/_custom_type_script = "uid://bl1r427686ckc"
