@@ -1,8 +1,31 @@
 [gd_scene format=3 uid="uid://tgmg2d827r3v"]
 
+[ext_resource type="PackedScene" uid="uid://qubqdm60myoh" path="res://Assets/Resources/Items/infoBillBoard.tscn" id="1_0jfwi"]
+[ext_resource type="Script" uid="uid://jq5otiia5re0" path="res://Assets/Items_Info/item.gd" id="1_n6omx"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_e1hc3"]
 
-[node name="Item" type="Node3D" unique_id=318714874]
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1hc3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0jfwi"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Item" type="RigidBody3D" unique_id=443501509]
+collision_layer = 4
+collision_mask = 7
+max_contacts_reported = 10
+script = ExtResource("1_n6omx")
+
+[node name="SubViewport" parent="." unique_id=1940571167 instance=ExtResource("1_0jfwi")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=204876022]
 mesh = SubResource("BoxMesh_e1hc3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=445532002]
+shape = SubResource("BoxShape3D_e1hc3")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=425507060]
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0, 1.2077038, 0)
+visible = false
+billboard = 1
+texture = SubResource("ViewportTexture_0jfwi")

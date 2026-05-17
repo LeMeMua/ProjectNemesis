@@ -21,9 +21,9 @@ top_radius = 0.1
 bottom_radius = 0.1
 height = 0.5
 
-[node name="Player" type="CharacterBody3D" unique_id=1593191334]
+[node name="Player" type="CharacterBody3D" unique_id=1593191334 groups=["player"]]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_w22c2")
 espejo_material = ExtResource("2_5k41c")
 
@@ -62,6 +62,10 @@ near = 0.01
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1018417516]
 target_position = Vector3(0, 0, -2.305)
+collision_mask = 4
+
+[node name="Hand" type="Node3D" parent="Head" unique_id=864525599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4169343, -0.53218174, -3.4558969)
 
 [node name="StateMachine" type="Node" parent="." unique_id=792951356 node_paths=PackedStringArray("default_state")]
 script = ExtResource("2_fq5u1")
