@@ -1,4 +1,4 @@
-[gd_resource type="ProceduralSkyMaterial" format=3 uid="uid://bihwntk6eb1jh"]
+[gd_resource type="ProceduralSkyMaterial" load_steps=4 format=3 uid="uid://bihwntk6eb1jh"]
 
 [sub_resource type="Gradient" id="Gradient_3o6dk"]
 offsets = PackedFloat32Array(0, 0.4915254, 0.9830508)

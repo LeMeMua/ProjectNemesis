@@ -25,6 +25,7 @@ config/icon="res://icon.svg"
 SignalManager="*uid://cp2ig1ah87geq"
 GameManager="*uid://ctmlb0o4kl70y"
 SceneManager="*uid://dtbkdkrmcfwx6"
+MusicaGlobal="*res://yaisume/Musica/Musica_Global.tscn"
 
 [display]
 
