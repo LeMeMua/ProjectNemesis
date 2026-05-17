@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7jsq7mik3cr5"]
+
+[ext_resource type="PackedScene" uid="uid://dytucwmk1wudm" path="res://yaisume/CutScene Inicio/CutScene.tscn" id="1_j5uae"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CutScene" parent="." instance=ExtResource("1_j5uae")]

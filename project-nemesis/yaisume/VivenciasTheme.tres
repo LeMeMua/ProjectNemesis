@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://b7snc41s4inld"]
+
+[ext_resource type="FontFile" uid="uid://bwgy6gy5561y6" path="res://yaisume/recursos/bloodcrow.ttf" id="2_oj3x5"]
+[ext_resource type="Texture2D" uid="uid://i5268uvai7k2" path="res://yaisume/recursos/manchanegra.png" id="2_v5kna"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lsq5j"]
+texture = ExtResource("2_v5kna")
+expand_margin_left = 223.0
+expand_margin_top = 158.0
+expand_margin_right = 187.0
+expand_margin_bottom = 144.0
+
+[resource]
+default_font = ExtResource("2_oj3x5")
+Button/font_sizes/font_size = 30
+Label/font_sizes/font_size = 80
+Label/fonts/font = ExtResource("2_oj3x5")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_lsq5j")
