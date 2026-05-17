@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cudyf7rkcbqwr"]
+[gd_scene load_steps=10 format=3 uid="uid://cudyf7rkcbqwr"]
 
 [ext_resource type="PackedScene" uid="uid://b4mv2ifocv33a" path="res://yaisume/mainmenu/pasillo/UnaCartaDeAmorAMemo.glb" id="1_0ah7o"]
+[ext_resource type="PackedScene" uid="uid://2to060ev63bq" path="res://yaisume/consultorio/consultorio_diseño_lvl.tscn" id="1_xcfaa"]
 [ext_resource type="Animation" uid="uid://crc08furlxm5m" path="res://cutscene.res" id="2_x3cra"]
 [ext_resource type="Material" uid="uid://bihwntk6eb1jh" path="res://Ambient/Sky/procedural_sky_material.tres" id="3_x3cra"]
 [ext_resource type="PackedScene" uid="uid://chhr0i567k1wf" path="res://yaisume/mainmenu/MainMenu.tscn" id="4_e2ax4"]
@@ -90,6 +91,9 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Consultorio_DiseñoLVL" parent="." instance=ExtResource("1_xcfaa")]
+transform = Transform3D(-0.0068416893, 0, -0.99997663, 0, 1, 0, 0.99997663, 0, -0.0068416893, 0.29633236, 0.7900486, -40.27797)
 
 [node name="UnaCartaDeAmorAMemo" parent="." instance=ExtResource("1_0ah7o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.656, 0.742, -18.147)
