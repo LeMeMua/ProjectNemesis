@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds77ikq81ysf0"]
+[gd_scene format=3 uid="uid://ds77ikq81ysf0"]
 
 [ext_resource type="FontFile" uid="uid://bwgy6gy5561y6" path="res://yaisume/recursos/bloodcrow.ttf" id="1_1ijjx"]
 [ext_resource type="Texture2D" uid="uid://bvnjwiself8nn" path="res://yaisume/muerteMenu/calaca.png" id="1_4skv8"]
@@ -15,7 +15,8 @@ expand_margin_bottom = 120.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_deo0o"]
 
-[node name="Control" type="Control"]
+[node name="GameOver" type="Control" unique_id=1902593617]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,7 +26,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1448391502]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,33 +40,33 @@ offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1744903832]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_styles/panel = SubResource("StyleBoxTexture_iiku7")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=1888581663]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=422908261]
 layout_mode = 2
 theme = ExtResource("2_jdpvn")
 
-[node name="TituloLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="TituloLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=1156121690]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_fonts/font = ExtResource("1_1ijjx")
 text = "Moriste"
 horizontal_alignment = 1
 
-[node name="InicioButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="InicioButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=1339164753]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.45452422, 0.45452428, 0.45452422, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_rlgnv")
 button_mask = 3
 text = "Reiniciar nivel"
 
-[node name="SalirButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="SalirButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=1932325178]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_deo0o")
 text = "Salir"

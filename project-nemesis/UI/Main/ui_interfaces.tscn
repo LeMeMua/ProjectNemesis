@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://bdew54agnyhxv"]
 
+[ext_resource type="Script" uid="uid://cbio46dq673kg" path="res://UI/Main/ui_interfaces.gd" id="1_doij3"]
 [ext_resource type="Texture2D" uid="uid://bsx6xlikgj11s" path="res://Assets/UI/pngwing.com(1).png" id="1_x2xry"]
 [ext_resource type="PackedScene" uid="uid://cxktbw2d4423x" path="res://UI/HUD/hud.tscn" id="2_pu533"]
 [ext_resource type="PackedScene" uid="uid://rau0gk0u4exj" path="res://Shader/mask.tscn" id="3_0r8cq"]
+[ext_resource type="PackedScene" uid="uid://ds77ikq81ysf0" path="res://yaisume/muerteMenu/GameOver.tscn" id="5_as5jc"]
+[ext_resource type="Script" uid="uid://bot6c14chw7lr" path="res://UI/Main/menu_layer.gd" id="5_jstso"]
+[ext_resource type="PackedScene" uid="uid://cuetve8ce8ehy" path="res://yaisume/pausemenu/PauseMenu.tscn" id="6_jstso"]
 
 [node name="UI_Interfaces" type="Control" unique_id=1247964423]
 layout_mode = 3
@@ -11,6 +15,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_doij3")
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=1560537949]
+process_mode = 3
+layer = 4
+script = ExtResource("5_jstso")
+
+[node name="PauseMenu" parent="PauseLayer" unique_id=71560859 instance=ExtResource("6_jstso")]
+visible = false
+
+[node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=1439299885]
+layer = 4
+
+[node name="GameOver" parent="GameOverLayer" unique_id=1902593617 instance=ExtResource("5_as5jc")]
+visible = false
 
 [node name="Crosshair" type="CanvasLayer" parent="." unique_id=1096717589]
 
@@ -31,7 +50,6 @@ texture = ExtResource("1_x2xry")
 expand_mode = 1
 
 [node name="HUD" parent="." unique_id=1246105262 instance=ExtResource("2_pu533")]
-layer = 10
 
 [node name="Mask" parent="." unique_id=355107799 instance=ExtResource("3_0r8cq")]
 layer = 2
