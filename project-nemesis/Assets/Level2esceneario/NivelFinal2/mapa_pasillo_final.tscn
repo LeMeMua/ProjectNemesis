@@ -101,7 +101,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sn2r8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rxeis"]
-size = Vector3(3, 3, 12)
+size = Vector3(3.025, 3, 12.79)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_48png"]
 _surfaces = [{
@@ -5267,6 +5267,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7744982, 4.531865, 1.029586
 light_color = Color(1, 1, 0.27450982, 1)
 omni_range = 7.547
 
+[node name="Light7" type="OmniLight3D" parent="Lights" unique_id=759837709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.290583, 4.531865, -10.694797)
+light_color = Color(1, 1, 0.27450982, 1)
+omni_range = 7.547
+
 [node name="Light2" type="OmniLight3D" parent="Lights" unique_id=665786208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4196115, 4.615638, 1.9575822)
 light_color = Color(1, 1, 0.27450982, 1)
@@ -5304,9 +5309,10 @@ mesh = SubResource("ArrayMesh_w5k1g")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="Puerta_Sombra" unique_id=421974767]
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Puerta_Sombra/Area3D" unique_id=581385005]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 4.134178)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, 11.011711)
 shape = SubResource("BoxShape3D_rxeis")
 
 [node name="Puerta_Jugador" type="MeshInstance3D" parent="." unique_id=599727726]
@@ -5315,6 +5321,7 @@ mesh = SubResource("ArrayMesh_aspnv")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="Puerta_Jugador" unique_id=846198988]
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Puerta_Jugador/Area3D" unique_id=613843743]
 transform = Transform3D(1.0000001, 0, -5.820766e-11, 0, 1, 0, 7.450581e-09, 0, 1, 0.0041007996, 0, 5.685074)

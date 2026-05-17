@@ -1,6 +1,7 @@
-[gd_scene load_steps=59 format=4 uid="uid://iph1s1ajpflp"]
+[gd_scene format=4 uid="uid://iph1s1ajpflp"]
 
 [ext_resource type="Texture2D" uid="uid://dkrkv6esw6ldt" path="res://yaisume/AnimacionFinal/finalScene_Worn road_Albedo.jpg" id="1_0buhw"]
+[ext_resource type="Script" uid="uid://cuxrprm4tt1do" path="res://yaisume/AnimacionFinal/animacion_final.gd" id="1_hyufa"]
 [ext_resource type="Texture2D" uid="uid://dd5h5fprvwbed" path="res://yaisume/AnimacionFinal/finalScene_Worn road_Metalness.jpg-Worn road_Roughness.png" id="2_hyufa"]
 [ext_resource type="Texture2D" uid="uid://t0vnfqcxru3l" path="res://yaisume/AnimacionFinal/finalScene_Worn road_Normal.jpg" id="3_ia7w7"]
 [ext_resource type="Texture2D" uid="uid://ctmr25xykd0io" path="res://yaisume/AnimacionFinal/finalScene_free-seamless-grass-texture-26.jpg" id="4_50ubo"]
@@ -1645,102 +1646,103 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7cvtq")
 
-[node name="finalScene" type="Node3D"]
+[node name="finalScene" type="Node3D" unique_id=659296770]
+script = ExtResource("1_hyufa")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=230691176]
 environment = SubResource("Environment_ln1yk")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=740245296]
 transform = Transform3D(-0.100611545, -0.09864313, 0.9900237, -0.7000872, 0.7140574, 0, -0.70693374, -0.6931029, -0.14090121, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=48714272]
 transform = Transform3D(0.05193383, 0, 0.99865055, 0, 0.99999994, 0, -0.9986505, 0, 0.051933832, 17.545132, 0.7601814, -1.9857442)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_gd3af")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" unique_id=1035032987]
+libraries/ = SubResource("AnimationLibrary_gd3af")
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1795138521]
 transform = Transform3D(18.5, 0, 0, 0, 0.5, 0, 0, 0, 4.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_prirc")
 skeleton = NodePath("")
 
-[node name="Cube_002" type="MeshInstance3D" parent="."]
+[node name="Cube_002" type="MeshInstance3D" parent="." unique_id=1742113805]
 transform = Transform3D(18.453323, 0, 0, 0, 0.40187335, 0, 0, 0, 4.5, 0, 0.8037467, -8.883034)
 mesh = SubResource("ArrayMesh_jcyep")
 skeleton = NodePath("")
 
-[node name="llANTA" type="MeshInstance3D" parent="."]
+[node name="llANTA" type="MeshInstance3D" parent="." unique_id=1807847058]
 transform = Transform3D(-0.013332605, 0, -0.9999111, 0, 1, 0, 0.9999111, 0, -0.013332605, 8.845648, 0.9304479, -0.36603647)
 visible = false
 mesh = SubResource("ArrayMesh_llqo2")
 skeleton = NodePath("")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1885383295]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LlantaSuelta" type="MeshInstance3D" parent="."]
+[node name="LlantaSuelta" type="MeshInstance3D" parent="." unique_id=954432363]
 transform = Transform3D(-0.013332605, 0, -0.9999111, 0, 1, 0, 0.9999111, 0, -0.013332605, 8.845648, 0.9304479, -0.36603647)
 visible = false
 mesh = SubResource("ArrayMesh_12n5k")
 skeleton = NodePath("")
 
-[node name="Llantas_005" type="MeshInstance3D" parent="."]
+[node name="Llantas_005" type="MeshInstance3D" parent="." unique_id=1194699439]
 transform = Transform3D(-4.371139e-08, -1.7484554e-07, 0.99999994, 0, 0.99999994, 1.7484554e-07, -1, 7.642741e-15, -4.3711385e-08, 16.78902, 0.8999995, -3.0005097)
 mesh = SubResource("ArrayMesh_7fkcd")
 skeleton = NodePath("")
 
-[node name="Llantas_004" type="MeshInstance3D" parent="."]
+[node name="Llantas_004" type="MeshInstance3D" parent="." unique_id=666296825]
 transform = Transform3D(-4.371139e-08, -1.7484554e-07, 0.99999994, 0, 0.99999994, 1.7484554e-07, -1, 7.642741e-15, -4.3711385e-08, 14.22925, 0.8999995, -3.0346415)
 mesh = SubResource("ArrayMesh_wolrp")
 skeleton = NodePath("")
 
-[node name="Llantas_003" type="MeshInstance3D" parent="."]
+[node name="Llantas_003" type="MeshInstance3D" parent="." unique_id=678103453]
 transform = Transform3D(-4.371139e-08, -1.7484554e-07, 0.99999994, 0, 0.99999994, 1.7484554e-07, -1, 7.642741e-15, -4.3711385e-08, 14.206429, 0.8999995, -1.3231368)
 mesh = SubResource("ArrayMesh_vjaj7")
 skeleton = NodePath("")
 
-[node name="Llantas_002" type="MeshInstance3D" parent="."]
+[node name="Llantas_002" type="MeshInstance3D" parent="." unique_id=978158673]
 transform = Transform3D(-4.371139e-08, -1.7484554e-07, 0.99999994, 0, 0.99999994, 1.7484554e-07, -1, 7.642741e-15, -4.3711385e-08, 16.766357, 0.8999995, -1.3006628)
 mesh = SubResource("ArrayMesh_41dv2")
 skeleton = NodePath("")
 
-[node name="Car" type="MeshInstance3D" parent="."]
+[node name="Car" type="MeshInstance3D" parent="." unique_id=138730939]
 transform = Transform3D(-0.013332612, 0, -0.9999111, 0, 1, 0, 0.9999111, 0, -0.013332612, 15.503095, 0.50000334, -2.175024)
 mesh = SubResource("ArrayMesh_wqyad")
 skeleton = NodePath("")
 
-[node name="Llantas_009" type="MeshInstance3D" parent="."]
+[node name="Llantas_009" type="MeshInstance3D" parent="." unique_id=2007160054]
 transform = Transform3D(0.013332882, 0, 0.999911, 0, 0.9999998, 0, -0.9999111, 0, 0.01333288, -22.23856, 0.8999995, 1.093348)
 visible = false
 mesh = SubResource("ArrayMesh_1ewmx")
 skeleton = NodePath("")
 
-[node name="Llantas_008" type="MeshInstance3D" parent="."]
+[node name="Llantas_008" type="MeshInstance3D" parent="." unique_id=1574402351]
 transform = Transform3D(0.013332882, 0, 0.999911, 0, 0.9999998, 0, -0.9999111, 0, 0.01333288, -22.261225, 0.8999995, 2.7931948)
 visible = false
 mesh = SubResource("ArrayMesh_f1t0n")
 skeleton = NodePath("")
 
-[node name="Llantas_007" type="MeshInstance3D" parent="."]
+[node name="Llantas_007" type="MeshInstance3D" parent="." unique_id=1023692218]
 transform = Transform3D(0.013332882, 0, 0.999911, 0, 0.9999998, 0, -0.9999111, 0, 0.01333288, -19.701452, 0.8999995, 2.8273273)
 visible = false
 mesh = SubResource("ArrayMesh_osf67")
 skeleton = NodePath("")
 
-[node name="Llantas_006" type="MeshInstance3D" parent="."]
+[node name="Llantas_006" type="MeshInstance3D" parent="." unique_id=556035506]
 transform = Transform3D(0.013332882, 0, 0.999911, 0, 0.9999998, 0, -0.9999111, 0, 0.01333288, -19.67863, 0.8999995, 1.1158226)
 visible = false
 mesh = SubResource("ArrayMesh_flo70")
 skeleton = NodePath("")
 
-[node name="Car_001" type="MeshInstance3D" parent="."]
+[node name="Car_001" type="MeshInstance3D" parent="." unique_id=252876414]
 transform = Transform3D(0.013332882, 0, 0.9999111, 0, 1, 0, -0.9999111, 0, 0.013332882, -20.975296, 0.50000334, 1.9677095)
 visible = false
 mesh = SubResource("ArrayMesh_udhl2")
 skeleton = NodePath("")
+
+[connection signal="animation_finished" from="Camera3D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
