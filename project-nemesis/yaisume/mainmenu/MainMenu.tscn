@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://chhr0i567k1wf"]
+[gd_scene format=3 uid="uid://chhr0i567k1wf"]
 
 [ext_resource type="Theme" uid="uid://b7snc41s4inld" path="res://yaisume/VivenciasTheme.tres" id="1_5ckiy"]
 [ext_resource type="FontFile" uid="uid://bwgy6gy5561y6" path="res://yaisume/recursos/bloodcrow.ttf" id="1_i26rj"]
+[ext_resource type="Script" uid="uid://bw1l105jb8v6h" path="res://yaisume/mainmenu/main_menu.gd" id="2_kvdy3"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=203863148]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -13,8 +14,9 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_5ckiy")
+script = ExtResource("2_kvdy3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=777961357]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,32 +30,36 @@ offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1767533275]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=107919558]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=394035251]
 layout_mode = 2
 
-[node name="TituloLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="TituloLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=675314689]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_fonts/font = ExtResource("1_i26rj")
 text = "Vivencias"
 horizontal_alignment = 1
 
-[node name="InicioButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="InicioButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=1783297844]
 layout_mode = 2
 button_mask = 3
 text = "Inicio"
 
-[node name="ConfiguracionButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="ConfiguracionButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=1347662605]
+visible = false
 layout_mode = 2
 text = "Configuracion"
 
-[node name="SalirButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+[node name="SalirButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer" unique_id=516449620]
 layout_mode = 2
 text = "Salir"
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/GridContainer/InicioButton" to="." method="_on_inicio_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/MarginContainer/GridContainer/SalirButton" to="." method="_on_salir_button_pressed"]

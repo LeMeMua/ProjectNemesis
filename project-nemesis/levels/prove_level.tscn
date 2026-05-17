@@ -2,18 +2,19 @@
 
 [ext_resource type="Material" uid="uid://bihwntk6eb1jh" path="res://Ambient/Sky/procedural_sky_material.tres" id="1_pd5a2"]
 [ext_resource type="PackedScene" uid="uid://bxjikfjviel2b" path="res://Players/player.tscn" id="1_v7pb3"]
+[ext_resource type="Script" uid="uid://dwgq0vunaeyll" path="res://levels/prove_level.gd" id="1_y66yv"]
 [ext_resource type="PackedScene" uid="uid://pc71d3spfvon" path="res://Players/player_mirror.tscn" id="2_a3gwf"]
 [ext_resource type="PackedScene" uid="uid://cvcsgbkhdj8fu" path="res://Objects/Interactuables/Light_switch/light_switch.tscn" id="4_l05c0"]
 [ext_resource type="PackedScene" uid="uid://bdew54agnyhxv" path="res://UI/Main/ui_interfaces.tscn" id="5_x7skl"]
 [ext_resource type="PackedScene" uid="uid://tgmg2d827r3v" path="res://Assets/Items_Info/item.tscn" id="6_w65pd"]
 [ext_resource type="Resource" uid="uid://ce8jj0f3xsrxl" path="res://Assets/Resources/Items/PruebaBox.tres" id="7_2euml"]
 
-[sub_resource type="Sky" id="Sky_l05c0"]
+[sub_resource type="Sky" id="Sky_2euml"]
 sky_material = ExtResource("1_pd5a2")
 
 [sub_resource type="Environment" id="Environment_x7skl"]
 background_mode = 2
-sky = SubResource("Sky_l05c0")
+sky = SubResource("Sky_2euml")
 tonemap_mode = 3
 ssr_enabled = true
 ssr_max_steps = 256
@@ -38,7 +39,8 @@ size = Vector3(30, 1.5, 30)
 [sub_resource type="BoxMesh" id="BoxMesh_v7pb3"]
 size = Vector3(30, 1, 30)
 
-[node name="prove_level" type="Node3D"]
+[node name="prove_level" type="Node3D" unique_id=839296032]
+script = ExtResource("1_y66yv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x7skl")
