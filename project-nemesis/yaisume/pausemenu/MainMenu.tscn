@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuetve8ce8ehy"]
+
+[ext_resource type="FontFile" uid="uid://bwgy6gy5561y6" path="res://yaisume/recursos/bloodcrow.ttf" id="1_5tydv"]
+[ext_resource type="Theme" uid="uid://b7snc41s4inld" path="res://yaisume/VivenciasTheme.tres" id="1_b7yln"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_b7yln")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.25
+offset_top = -160.0
+offset_right = 208.25
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TituloLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("1_5tydv")
+text = "Pausa"
+horizontal_alignment = 1
+
+[node name="InicioButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+button_mask = 3
+text = "Volver"
+
+[node name="SalirButton" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Salir"

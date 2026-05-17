@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://cudyf7rkcbqwr"]
+
+[ext_resource type="PackedScene" uid="uid://b4mv2ifocv33a" path="res://yaisume/mainmenu/pasillo/UnaCartaDeAmorAMemo.glb" id="1_0ah7o"]
+[ext_resource type="Animation" uid="uid://crc08furlxm5m" path="res://cutscene.res" id="2_x3cra"]
+[ext_resource type="Material" uid="uid://bihwntk6eb1jh" path="res://Ambient/Sky/procedural_sky_material.tres" id="3_x3cra"]
+[ext_resource type="PackedScene" uid="uid://chhr0i567k1wf" path="res://yaisume/mainmenu/MainMenu.tscn" id="4_e2ax4"]
+
+[sub_resource type="Animation" id="Animation_e2ax4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(25.281164, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2.8889856, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-3.602934, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5417888, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5707978, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5064825e-06, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xcfaa"]
+_data = {
+&"RESET": SubResource("Animation_e2ax4"),
+&"cutscene": ExtResource("2_x3cra")
+}
+
+[sub_resource type="Sky" id="Sky_e2ax4"]
+sky_material = ExtResource("3_x3cra")
+
+[sub_resource type="Environment" id="Environment_xcfaa"]
+background_mode = 2
+sky = SubResource("Sky_e2ax4")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="UnaCartaDeAmorAMemo" parent="." instance=ExtResource("1_0ah7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.656, 0.742, -18.147)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(3.162586e-08, 0.9995793, 0.029003443, 4.369318e-08, 0.029003443, -0.9995793, -1, 3.2879825e-08, -4.2757538e-08, 25.281164, 2.8889856, -3.602934)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_xcfaa")
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xcfaa")
+
+[node name="Control" parent="." instance=ExtResource("4_e2ax4")]
+visible = false

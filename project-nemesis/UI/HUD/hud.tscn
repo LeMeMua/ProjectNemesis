@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://cxktbw2d4423x"]
+[gd_scene load_steps=5 format=3 uid="uid://cxktbw2d4423x"]
 
-[ext_resource type="Texture2D" uid="uid://beykfhj4kidm2" path="res://Assets/UI/Barra de vida.png" id="1_ia7gp"]
 [ext_resource type="Script" uid="uid://bp1funtrfcgvc" path="res://UI/HUD/hud.gd" id="1_te8l2"]
-[ext_resource type="FontFile" uid="uid://cdfljc714sss0" path="res://Assets/UI/Font/IndieFlower-Regular.ttf" id="2_ing8j"]
+[ext_resource type="Texture2D" uid="uid://dsijn3brxe0c8" path="res://UI/HUD/CORAZON.png" id="2_te8l2"]
+[ext_resource type="FontFile" uid="uid://bwgy6gy5561y6" path="res://yaisume/recursos/bloodcrow.ttf" id="3_qdh7y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_te8l2"]
-font = ExtResource("2_ing8j")
+font = ExtResource("3_qdh7y")
 font_size = 32
 
-[node name="HUD" type="CanvasLayer" unique_id=1246105262]
+[node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_te8l2")
 
-[node name="Fullsize" type="Control" parent="." unique_id=1117700067]
+[node name="Fullsize" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,20 +19,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="health" type="TextureRect" parent="Fullsize" unique_id=94569466]
+[node name="health" type="TextureRect" parent="Fullsize"]
 modulate = Color(0.27450982, 0.27450982, 0.6313726, 1)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 100.0
-offset_top = -148.0
-offset_right = 200.0
-offset_bottom = -61.0
+offset_left = 60.0
+offset_top = -140.0
+offset_right = 160.0
+offset_bottom = -53.0
 grow_vertical = 0
-texture = ExtResource("1_ia7gp")
+texture = ExtResource("2_te8l2")
+expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=680114154]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -42,7 +43,7 @@ offset_right = -33.0
 offset_bottom = 200.0
 grow_horizontal = 0
 
-[node name="Objective" type="Label" parent="VBoxContainer" unique_id=1975408045]
+[node name="Objective" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(250, 48)
 layout_mode = 2
 size_flags_vertical = 1
@@ -50,7 +51,7 @@ text = "Sal del Pasillo"
 label_settings = SubResource("LabelSettings_te8l2")
 autowrap_mode = 1
 
-[node name="Tiempo" type="Label" parent="VBoxContainer" unique_id=934002169]
+[node name="Tiempo" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "40.0
@@ -58,7 +59,7 @@ text = "40.0
 label_settings = SubResource("LabelSettings_te8l2")
 horizontal_alignment = 1
 
-[node name="Timer" type="Timer" parent="." unique_id=1193040555]
+[node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
 one_shot = true
 autostart = true
