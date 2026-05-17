@@ -7,7 +7,9 @@ var current_state: StateBase = null
 func _ready() -> void:
 	var initial_state := _resolve_state(default_state)
 	if initial_state:
+		current_state = initial_state
 		_enter_state_recursive(initial_state)
+
 	else:
 		push_warning("StateMachine default_state is not set or could not be resolved")
 

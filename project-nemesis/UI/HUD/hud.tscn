@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cxktbw2d4423x"]
+
+[ext_resource type="Texture2D" uid="uid://beykfhj4kidm2" path="res://Assets/UI/Barra de vida.png" id="1_ia7gp"]
+[ext_resource type="Script" uid="uid://bp1funtrfcgvc" path="res://UI/HUD/hud.gd" id="1_te8l2"]
+[ext_resource type="FontFile" uid="uid://cdfljc714sss0" path="res://Assets/UI/Font/IndieFlower-Regular.ttf" id="2_ing8j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_te8l2"]
+font = ExtResource("2_ing8j")
+font_size = 32
+
+[node name="HUD" type="CanvasLayer" unique_id=1246105262]
+script = ExtResource("1_te8l2")
+
+[node name="Fullsize" type="Control" parent="." unique_id=1117700067]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="health" type="TextureRect" parent="Fullsize" unique_id=94569466]
+modulate = Color(0.27450982, 0.27450982, 0.6313726, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -148.0
+offset_right = 200.0
+offset_bottom = -61.0
+grow_vertical = 0
+texture = ExtResource("1_ia7gp")
+
+[node name="Objective" type="Label" parent="." unique_id=1975408045]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = 73.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+text = "Sal del Pasillo"
+label_settings = SubResource("LabelSettings_te8l2")
