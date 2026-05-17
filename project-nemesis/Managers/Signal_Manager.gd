@@ -3,3 +3,5 @@ extends Node
 signal toggle_viewport_signal
 signal entered_screen
 signal health_changed
+signal nivel_completed
+signal begin_level

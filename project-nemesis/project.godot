@@ -37,6 +37,7 @@ window/stretch/mode="canvas_items"
 light=""
 billboard=""
 player=""
+mirror=""
 
 [input]
 

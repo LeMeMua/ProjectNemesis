@@ -10,7 +10,7 @@ albedo_color = Color(0.60117716, 0.27391297, 0.8377679, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bf1pd"]
 material = SubResource("StandardMaterial3D_u2el0")
 
-[node name="PlayerMirror" type="CharacterBody3D" unique_id=654816598 groups=["player"]]
+[node name="PlayerMirror" type="CharacterBody3D" unique_id=654816598 groups=["mirror"]]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_u2el0")
@@ -35,3 +35,4 @@ aabb = AABB(0, -0.15664062, -0.20449218, 0.2, 0.2, 0.2)
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1261468684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1224251, 0)
 visible = false
+light_energy = 2.0

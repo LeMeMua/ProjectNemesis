@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b3q7uh6p7521y"]
+
+[ext_resource type="Script" uid="uid://dwgq0vunaeyll" path="res://levels/prove_level.gd" id="1_7pnde"]
+[ext_resource type="Material" uid="uid://bihwntk6eb1jh" path="res://Ambient/Sky/procedural_sky_material.tres" id="2_lpw10"]
+[ext_resource type="PackedScene" uid="uid://pc71d3spfvon" path="res://Players/player_mirror.tscn" id="3_3k4h2"]
+[ext_resource type="PackedScene" uid="uid://bxjikfjviel2b" path="res://Players/player.tscn" id="4_7sshj"]
+[ext_resource type="PackedScene" uid="uid://bdew54agnyhxv" path="res://UI/Main/ui_interfaces.tscn" id="5_8i4nq"]
+[ext_resource type="PackedScene" uid="uid://ffyf3ancfo82" path="res://Assets/Level2esceneario/NivelFinal2/mapa_pasillo_final.tscn" id="6_lpw10"]
+
+[sub_resource type="Sky" id="Sky_2euml"]
+sky_material = ExtResource("2_lpw10")
+
+[sub_resource type="Environment" id="Environment_x7skl"]
+background_mode = 2
+sky = SubResource("Sky_2euml")
+tonemap_mode = 3
+ssr_enabled = true
+ssr_max_steps = 256
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+fog_enabled = true
+fog_mode = 1
+fog_light_energy = 0.2
+fog_density = 1.0
+fog_sky_affect = 0.2
+fog_height_density = 1.3196
+volumetric_fog_enabled = true
+volumetric_fog_sky_affect = 0.0
+volumetric_fog_temporal_reprojection_enabled = false
+adjustment_enabled = true
+
+[node name="prove_level" type="Node3D" unique_id=839296032]
+script = ExtResource("1_7pnde")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=398478527]
+environment = SubResource("Environment_x7skl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=578115584]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 5.6785507, 0)
+visible = false
+shadow_enabled = true
+
+[node name="PlayerMirror" parent="." unique_id=654816598 node_paths=PackedStringArray("player") instance=ExtResource("3_3k4h2")]
+transform = Transform3D(-4.3711385e-08, 0, -1, 0, 0.99999994, 0, 0.99999994, 0, -4.371139e-08, 19.343138, 2.2920408, 13.990603)
+player = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=1593191334 node_paths=PackedStringArray("player_mirror") instance=ExtResource("4_7sshj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.304421, -5.5762753)
+player_mirror = NodePath("../PlayerMirror")
+
+[node name="UI_Interfaces" parent="." unique_id=1247964423 instance=ExtResource("5_8i4nq")]
+metadata/_edit_use_anchors_ = true
+
+[node name="MapaPasilloFinal" parent="." unique_id=1363332502 instance=ExtResource("6_lpw10")]

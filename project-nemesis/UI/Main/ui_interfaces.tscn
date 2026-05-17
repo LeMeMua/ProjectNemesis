@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bsx6xlikgj11s" path="res://Assets/UI/pngwing.com(1).png" id="1_x2xry"]
 [ext_resource type="PackedScene" uid="uid://cxktbw2d4423x" path="res://UI/HUD/hud.tscn" id="2_pu533"]
 [ext_resource type="PackedScene" uid="uid://rau0gk0u4exj" path="res://Shader/mask.tscn" id="3_0r8cq"]
+[ext_resource type="Script" uid="uid://dwrpjlv0e8ahx" path="res://UI/Main/game_over_layer.gd" id="4_d6lbr"]
 [ext_resource type="PackedScene" uid="uid://ds77ikq81ysf0" path="res://yaisume/muerteMenu/GameOver.tscn" id="5_as5jc"]
 [ext_resource type="Script" uid="uid://bot6c14chw7lr" path="res://UI/Main/menu_layer.gd" id="5_jstso"]
 [ext_resource type="PackedScene" uid="uid://cuetve8ce8ehy" path="res://yaisume/pausemenu/PauseMenu.tscn" id="6_jstso"]
@@ -27,6 +28,7 @@ visible = false
 
 [node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=1439299885]
 layer = 4
+script = ExtResource("4_d6lbr")
 
 [node name="GameOver" parent="GameOverLayer" unique_id=1902593617 instance=ExtResource("5_as5jc")]
 visible = false

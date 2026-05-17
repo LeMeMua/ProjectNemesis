@@ -9,16 +9,18 @@ var current_health: float = 100.0:
 const MAX_HEALTH: float = 100.0
 var getting_damage : bool = false
 var elapsed : float 
+var playing : bool
 
 func _ready() -> void:
     current_health = MAX_HEALTH
 
 func _physics_process(_delta: float) -> void:
-    elapsed+=_delta
-    if elapsed >1.0:
-        print (current_health)
-        do_heal_damage()
-        elapsed = 0
+    if playing:
+        elapsed+=_delta
+        if elapsed >1.0:
+            print (current_health)
+            do_heal_damage()
+            elapsed = 0
 
 func emit_notifier_screen()->void:
     getting_damage = !getting_damage
@@ -40,3 +42,9 @@ func do_heal_damage()->void:
         receive_damage()
     elif !getting_damage:
         healing_damage()
+
+func reset_game():
+    current_health = 100.0
+    getting_damage = false
+    elapsed = 0
+    playing = false

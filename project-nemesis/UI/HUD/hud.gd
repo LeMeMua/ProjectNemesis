@@ -10,6 +10,8 @@ var current_health: float
 
 func _ready() -> void:
     SignalManager.health_changed.connect(update_health_animation)
+    SignalManager.nivel_completed.connect(pause_timer)
+    SignalManager.begin_level.connect(restart_timer)
 
 func _physics_process(_delta: float) -> void:
     set_time_text()

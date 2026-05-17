@@ -44,6 +44,9 @@ visible = false
 transform = Transform3D(0.9077775, -0.4051596, -0.10856219, 5.131455e-10, 0.25881907, -0.9659258, 0.41945213, 0.8768457, 0.23495013, 0.22344567, -0.08201665, -0.40631706)
 mesh = SubResource("PlaneMesh_ey0s5")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Head/RotationEspejo" unique_id=1324155466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012586772, -0.24835798)
+
 [node name="Linterna" type="Node3D" parent="Head" unique_id=1035895531]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45339155, -0.67757857, -0.30143565)
 visible = false

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://g28yydpxjo3d"]
+
+[ext_resource type="Script" uid="uid://dwgq0vunaeyll" path="res://levels/prove_level.gd" id="1_p558s"]
+[ext_resource type="Material" uid="uid://bihwntk6eb1jh" path="res://Ambient/Sky/procedural_sky_material.tres" id="2_fv1f8"]
+[ext_resource type="PackedScene" uid="uid://pc71d3spfvon" path="res://Players/player_mirror.tscn" id="3_72fwh"]
+[ext_resource type="PackedScene" uid="uid://bxjikfjviel2b" path="res://Players/player.tscn" id="4_2btny"]
+[ext_resource type="PackedScene" uid="uid://bdew54agnyhxv" path="res://UI/Main/ui_interfaces.tscn" id="5_5k1ww"]
+[ext_resource type="PackedScene" uid="uid://2to060ev63bq" path="res://yaisume/consultorio/consultorio_diseño_lvl.tscn" id="6_fv1f8"]
+
+[sub_resource type="Sky" id="Sky_2euml"]
+sky_material = ExtResource("2_fv1f8")
+
+[sub_resource type="Environment" id="Environment_x7skl"]
+background_mode = 2
+sky = SubResource("Sky_2euml")
+tonemap_mode = 3
+ssr_enabled = true
+ssr_max_steps = 256
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+fog_enabled = true
+fog_mode = 1
+fog_light_energy = 0.2
+fog_density = 1.0
+fog_sky_affect = 0.2
+fog_height_density = 1.3196
+volumetric_fog_enabled = true
+volumetric_fog_sky_affect = 0.0
+volumetric_fog_temporal_reprojection_enabled = false
+adjustment_enabled = true
+
+[node name="prove_level" type="Node3D" unique_id=839296032]
+script = ExtResource("1_p558s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=398478527]
+environment = SubResource("Environment_x7skl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=578115584]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 5.6785507, 0)
+visible = false
+shadow_enabled = true
+
+[node name="PlayerMirror" parent="." unique_id=654816598 node_paths=PackedStringArray("player") instance=ExtResource("3_72fwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8571944, 2.2920408, -1.3011231)
+player = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=1593191334 node_paths=PackedStringArray("player_mirror") instance=ExtResource("4_2btny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.304421, 4.439979)
+player_mirror = NodePath("../PlayerMirror")
+
+[node name="UI_Interfaces" parent="." unique_id=1247964423 instance=ExtResource("5_5k1ww")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Consultorio_DiseñoLVL" parent="." unique_id=95683466 instance=ExtResource("6_fv1f8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2976024, -2.3841858e-07, 0.016575813)
+metadata/_edit_lock_ = true
