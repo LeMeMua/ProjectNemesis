@@ -2,6 +2,13 @@ extends StateBasePlayer
 
 class_name StatePlayerPlaying
 var gravity: float = 9.81
+
+func start() -> void:
+    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func end() -> void:
+    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+    
 func on_physics_process(delta: float)-> void:
     if not player.is_on_floor():
         player.velocity.y -= gravity * delta

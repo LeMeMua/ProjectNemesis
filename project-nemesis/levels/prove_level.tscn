@@ -1,20 +1,52 @@
 [gd_scene format=3 uid="uid://gwbrmmuwu7g4"]
 
+[ext_resource type="Material" uid="uid://bihwntk6eb1jh" path="res://Ambient/Sky/procedural_sky_material.tres" id="1_pd5a2"]
 [ext_resource type="PackedScene" uid="uid://bxjikfjviel2b" path="res://Players/player.tscn" id="1_v7pb3"]
+[ext_resource type="PackedScene" uid="uid://pc71d3spfvon" path="res://Players/player_mirror.tscn" id="2_a3gwf"]
+[ext_resource type="PackedScene" uid="uid://cvcsgbkhdj8fu" path="res://Objects/Interactuables/Light_switch/light_switch.tscn" id="4_l05c0"]
+[ext_resource type="PackedScene" uid="uid://bdew54agnyhxv" path="res://UI/Main/ui_interfaces.tscn" id="5_x7skl"]
+
+[sub_resource type="Sky" id="Sky_l05c0"]
+sky_material = ExtResource("1_pd5a2")
+
+[sub_resource type="Environment" id="Environment_x7skl"]
+background_mode = 2
+sky = SubResource("Sky_l05c0")
+tonemap_mode = 3
+ssr_enabled = true
+ssr_max_steps = 256
+ssao_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+fog_enabled = true
+fog_mode = 1
+fog_light_energy = 0.2
+fog_density = 1.0
+fog_sky_affect = 0.2
+fog_height_density = 1.3196
+volumetric_fog_enabled = true
+volumetric_fog_sky_affect = 0.0
+volumetric_fog_temporal_reprojection_enabled = false
+adjustment_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lwwqi"]
-size = Vector3(15, 1, 15)
+size = Vector3(30, 1.5, 30)
 
 [sub_resource type="BoxMesh" id="BoxMesh_v7pb3"]
-size = Vector3(15, 1, 15)
+size = Vector3(30, 1, 30)
 
 [node name="prove_level" type="Node3D" unique_id=839296032]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=398478527]
+environment = SubResource("Environment_x7skl")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=578115584]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 5.6785507, 0)
+visible = false
 shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1116037084]
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=341041927]
 shape = SubResource("BoxShape3D_lwwqi")
@@ -22,5 +54,47 @@ shape = SubResource("BoxShape3D_lwwqi")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1821622923]
 mesh = SubResource("BoxMesh_v7pb3")
 
-[node name="Player" parent="." unique_id=1593191334 instance=ExtResource("1_v7pb3")]
+[node name="Pared" type="StaticBody3D" parent="." unique_id=1421614233]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4.5232544, -16.006165)
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared" unique_id=2099391371]
+shape = SubResource("BoxShape3D_lwwqi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pared" unique_id=596788674]
+mesh = SubResource("BoxMesh_v7pb3")
+
+[node name="Pared2" type="StaticBody3D" parent="." unique_id=1517713563]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -16.001335, 4.5232544, -1.035059)
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pared2" unique_id=108657978]
+shape = SubResource("BoxShape3D_lwwqi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pared2" unique_id=1966242011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15846252, -0.55939865)
+mesh = SubResource("BoxMesh_v7pb3")
+
+[node name="PlayerMirror" parent="." unique_id=654816598 node_paths=PackedStringArray("player") instance=ExtResource("2_a3gwf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21488619, 2.2920408, -1.8148794)
+player = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=1593191334 node_paths=PackedStringArray("player_mirror") instance=ExtResource("1_v7pb3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.304421, 0)
+player_mirror = NodePath("../PlayerMirror")
+
+[node name="Lights" type="Node3D" parent="." unique_id=1341844896]
+
+[node name="Light" type="OmniLight3D" parent="Lights" unique_id=225802137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.736511, 12.318678, 0)
+omni_range = 7.547
+
+[node name="Light2" type="OmniLight3D" parent="Lights" unique_id=1792322677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98012066, 12.318678, -11.276068)
+omni_range = 7.547
+
+[node name="Light_Switch" parent="." unique_id=2136961429 node_paths=PackedStringArray("light") instance=ExtResource("4_l05c0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.195286, 3.9052835, 0)
+light = NodePath("../Lights")
+
+[node name="UI_Interfaces" parent="." unique_id=1247964423 instance=ExtResource("5_x7skl")]
